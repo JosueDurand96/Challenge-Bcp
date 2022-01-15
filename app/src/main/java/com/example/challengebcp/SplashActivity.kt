@@ -1,5 +1,6 @@
 package com.example.challengebcp
 
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,32 +11,22 @@ import android.widget.TextView
 import android.util.Log
 
 
-
-
 class SplashActivity : AppCompatActivity() {
-    private lateinit var textView:TextView
-    private val cancelLongClick = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView = findViewById(R.id.textView)
-        textView.setOnTouchListener { v, event ->
-            when (event?.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    Handler().postDelayed({
-                        if (cancelLongClick==false) {
-                            val intent = Intent(applicationContext, CoinActivity::class.java)
-                            startActivity(intent)
-                            Log.d("Josue", "SIIIII")
-                        } else {
-                            Log.d("Josue", "*Evento 2. Cancelado.")
-                        }
-                    }, 1500)
 
-                }
-            }
+        val durationSplash = 2800
+        Handler().postDelayed({
+            setupWindowAnimations()
+        }, durationSplash.toLong())
 
-            v?.onTouchEvent(event) ?: true
-        }
+    }
+    private fun setupWindowAnimations() {
+        val i = Intent(this, MenuActivity::class.java)
+        val transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this)
+        startActivity(i, transitionActivityOptions.toBundle())
+
     }
 }

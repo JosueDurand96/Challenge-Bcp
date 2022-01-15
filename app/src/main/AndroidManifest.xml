@@ -11,12 +11,17 @@
         android:theme="@style/Theme.ChallengeBcp">
         <activity
             android:name=".MenuActivity"
+            android:theme="@style/Theme.ChallengeBcp.NoAction"
             android:exported="false" />
         <activity
             android:name=".CoinActivity"
+            android:theme="@style/Theme.ChallengeBcp.NoAction"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ChallengeBcp.NoAction"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
