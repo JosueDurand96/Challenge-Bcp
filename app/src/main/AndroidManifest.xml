@@ -11,7 +11,7 @@
         android:theme="@style/Theme.ChallengeBcp">
         <activity
             android:name=".MenuActivity"
-            android:theme="@style/Theme.ChallengeBcp.NoAction"
+            android:theme="@style/Theme.ChallengeBcp.Menu.NoAction"
             android:exported="false" />
         <activity
             android:name=".CoinActivity"
