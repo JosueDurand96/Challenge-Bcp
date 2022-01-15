@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChallengeBcp">
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
